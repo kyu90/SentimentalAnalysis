@@ -1,3 +1,6 @@
+import KnuSL
+import 
+
 ksl = KnuSL
 
 print("\nKNU 한국어 감성사전입니다~ :)")
