@@ -21,3 +21,12 @@ for i in range(0, len(wordname)):
         except:
             pass
     result.append(temp2)
+
+result = pd.DataFrame(result)
+result.columns = ['Sentiment']
+
+df = df.reset_index().drop(['index'], axis= 1)
+df = pd.concat([df, result], axis=1)
+
+temp = df[df['click_count'].astype(np.int)>100]
+np.log10(temp['click_count'].astype(np.int)).hist()
